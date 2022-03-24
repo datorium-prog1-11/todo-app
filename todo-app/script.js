@@ -57,25 +57,117 @@ console.log(saraksts);
 let ieraksts = saraksts[0];
 console.log(ieraksts);
 
-// Definējam teksta un skaitļu sarakstus:
-// Teksta sarakstā 3 elementi:
-let tekstaSaraksts = ['viens', 'divi', 'trīs'];
-// Skaitļu sarakstā 5 elementi
-let skaitluSaraksts = [1,2,3,4,5,6, 7, 99];
+// Uzdevums
 
-// Izvadām ārā vidējo elementu no teksta saraksta:
-console.log(tekstaSaraksts[1]);
-// Izvadām ārā pēdējo vērtību no skaitļu saraksta:
-console.log(skaitluSaraksts[4]);
+// Definēt jaunu sarakstu ar 5 teksta vērtībām
+//                    0       1       2        3        4
+// Definējam sarakstu izmantojot kavadrātiekavas ([]), vērtības atdala ar komatu.
+let uzdSaraksts = ['viens', 'divi', 'trīs', 'četri', 'pieci', 'seši', 'septiņi'];
+// - Izvadīt pirmo
+// Pieprasām sarakstam pirmo elementu izmantojot kvatdrāt iekavas ([]) un indeksu 0
+console.log('pirmais elements', uzdSaraksts[0]);
+// un pēdējo elementu
+// Pieprasām sarakstam pēdējo elementu izmantojot kvatdrāt iekavas ([]) un indeksu 4
+console.log('pēdējais elements', uzdSaraksts[4]);
+console.log('Saraksta garums', uzdSaraksts.length);
+console.log('pēdējais elem izmantojot garumu:', uzdSaraksts[uzdSaraksts.length - 1]);
 
-// 1. izmantojam `.length` atribūtu
-// length pasaka cik mums ir elementu sarakstā
-console.log(skaitluSaraksts.length);
-// izvadām vienmēr pēdējo elementu izmantojot `.length` atribūtu:
-console.log('vienmēr pēdējais elements:');
-// noskaidrojam pēdējā elementa indeksu:
-let pedejaisIndekss = skaitluSaraksts.length - 1;
-console.log('pēdējā elementa indekss', pedejaisIndekss);
-// Nolasām pēdējo elementu pēc indeksa
-let pedejaisElements = skaitluSaraksts[pedejaisIndekss];
-console.log('pēdējais elements', pedejaisElements);
+// - Pierakstīt komentārus pie katras koda rindiņas, ko tā dara
+
+// Ja es gribu izvadīt visas vērtības:
+console.log(uzdSaraksts[1]);
+console.log(uzdSaraksts[2]);
+console.log(uzdSaraksts[3]);
+
+// Varam to izdarīt izmantojot ciklu:
+
+for (
+    // - Sākam skaitītāja sākuma vērtību - `let i = 0`
+    //   (šajā gadījumā gribam sākt no 0)
+    let i = 0;
+    // - Pēc tam norādām "cik ilgi cikls ies" - `i < uzdSaraksts.length`
+    //   (kamēr i būs mazāks par saraksta garumu)
+    i < uzdSaraksts.length;
+    // - Beigās definējam kā mēs mainīsim skaitītāja vērtību katrā ciklā - `i = i + 1`;
+    //   (šajā gadījumā mēs palielinām par 1)
+    i = i + 1
+) {
+    // Izvadām `i` vērtību katrā iterācijā
+    console.log('i', i);
+    // Izņemam no saraksta vērtību, pēc `i` vērtības.
+    // šādi mēs varam iziet cauri visam sarakstam
+    console.log('i elements', uzdSaraksts[i]);
+}
+
+// Kas notiek datoram smadzenēs, kad mēs izpildam ciklu:
+
+// 1. Mēs definējam mainīgo
+let i = 0;
+
+// 2. Pārbaudām nosacījumu - vai izpildīt cikla saturu?
+if (i < uzdSaraksts.length) {
+
+    // Ja nosacījums izpildās, tad izpildam cikla saturu:
+    console.log('i', i);
+    console.log('i elements', uzdSaraksts[i]);
+
+    // Pēc cikla satura izpildes, palielinam skaitītāju:
+    i = 1;
+}
+
+if (i < uzdSaraksts.length) {
+    // Ja nosacījums izpildās, tad izpildam cikla saturu:
+    console.log('i', i);
+    console.log('i elements', uzdSaraksts[i]);
+
+    i = 2;
+}
+
+if (2 < 7) {
+    // Ja nosacījums izpildās, tad izpildam cikla saturu:
+    console.log('i', 2);
+    console.log('i elements', 'trīs');
+
+    i = 3;
+}
+
+if (3 < 7) {
+    // Ja nosacījums izpildās, tad izpildam cikla saturu:
+    console.log('i', 3);
+    console.log('i elements', 'četri');
+
+    i = 4;
+}
+
+let jaunsForSaraksts = ['Kāposts', 'Burkāns', 'Gurķis'];
+
+for (const ieraksts of jaunsForSaraksts) {
+    console.log('for of ieraksts', ieraksts);
+}
+
+// Uzdevums
+
+// garums = 7
+// 7 / 2 = 3.5
+// noapaļojam uz indeksu Math.floor(3.5) = 3
+//                                         3
+let elementi = ['viens', 'divi', 'trīs', 'četri', 'pieci', 'seši', 'septiņi', 'Astoņi'];
+
+let videjaisI = Math.floor(elementi.length / 2);
+// % atgriež dalīšanas atlikumu
+let masivaIrParaElementi = elementi.length % 2 === 0;
+
+// Ja ir pāra skaits elementu, tad noņemam 1 no rezultāta,
+// lai dabūtu to, kas ir pirms vidus
+if (masivaIrParaElementi) {
+    videjaisI = videjaisI - 1;
+}
+
+for (let i = 1; i < elementi.length - 1; i += 1) {
+
+    if (i === videjaisI) {
+        console.log("Vidējais elements", i, elementi[i]);
+    } else {
+        console.log(i, elementi[i]);
+    }
+}

@@ -1,3 +1,12 @@
+# q2 01-14 2-ned: JS Cikli
+
+Prot izmantot cikla konstrukcijas.
+
+--//--
+
+---
+---
+
 # q2 01-04 1-ned: JS Cikli un Datu saraksti
 
 - Prot izmantot cikla konstrukcijas.
