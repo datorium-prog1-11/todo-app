@@ -1,6 +1,13 @@
 let sarakstsElem = document.querySelector('#todo-saraksts');
 console.log(sarakstsElem);
 
+sarakstsElem.addEventListener('click', function(event) {
+    let klikElem = event.target;
+    if (klikElem.classList.contains('dzest')) {
+        console.log("dzēst");
+    }
+});
+
 // Funkcija, kas atgriež vērtību
 function reizinat(a, b) {
     let reizinajums = a * b;
@@ -48,7 +55,7 @@ ievadForma.addEventListener('submit', function(event) {
 
     // VALIDĀCIJA:
     // 4. Izsaucam jauno funkciju
-    let kluda = validet(tekstaLauksTeksts);
+    let kluda = TodoIeraksts.validet(tekstaLauksTeksts);
     // 5. Pārbaudām kļūdu
     if (kluda) {
         // 6. viss slikti
@@ -58,7 +65,7 @@ ievadForma.addEventListener('submit', function(event) {
 
 
     // PIEVIENOŠANA:
-    const ierakstsElem = jaunsTodoIeraksts(tekstaLauksTeksts);
+    const ierakstsElem = TodoIeraksts.jauns(tekstaLauksTeksts);
 
     // Elementa pievienošana paliek te pat
     sarakstsElem.append(ierakstsElem);

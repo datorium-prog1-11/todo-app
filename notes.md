@@ -1,5 +1,14 @@
 # q2 02-18 7-ned: Koda reorganizācija un organizācija - Refactor
 
+- Prot grupēt saistītu funkcionalitāti pa objektiem
+
+--//--
+
+---
+---
+
+# q2 02-18 7-ned: Koda reorganizācija un organizācija - Refactor
+
 - Prot sadalīt programmas daļas pa failiem
 - Apsver koda grupēšanu pēc funkcionalitātes
 
