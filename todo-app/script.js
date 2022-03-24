@@ -30,51 +30,8 @@ console.log('paragrafs', paragrafs);
 console.log('body', document.body);
 document.body.append(paragrafs);
 
-// 1 nodefinet funkciju:
-function irTukss(teksts) {
-    // 4. refactor
-    return !teksts;
-}
+// kods bija šeit ...
 
-// 1. Izveidot jaunu funkciju
-function validet(jaunaTodoTeksts) {
-    // 2. Pārvietojam vecās funkcijas kodu uz šejieni
-    // 3. Salabot mainīgos tekstaLauks.value => jaunaTodoTeksts
-    // izmantojam šo: true == !false
-    // false == !true
-    // !'' == true
-    if (irTukss(jaunaTodoTeksts)) {
-        return 'Lūdzu ievadi vērtību!';  // šeit funkcijas izpilde beidzās
-    }
-
-    // Iegūstam visus elementus ar klasi class="todo-ieraksts"
-    let todoIeraksti = document.querySelectorAll('.todo-ieraksts');
-
-    // TODO: 2. uzd risinājums
-    for (const ieraksts of todoIeraksti) {
-        console.log(ieraksts.innerText); // <- Vai viņa ir šeit?
-        console.log(jaunaTodoTeksts); // <- jaunā vērtība
-
-        let ierakstsJauEksiste = ieraksts.innerText == jaunaTodoTeksts;
-
-        if (ierakstsJauEksiste) {
-            return 'Šāds ieraksts jau eksistē';
-        }
-    }
-}
-
-// - Izveidot funkciju
-function jaunsTodoIeraksts(jaunaTodoTeksts) {
-
-    // - Pārvietojam ieraksta izveides kodu uz šejieni
-    const ierakstsElem = document.createElement('li');
-    ierakstsElem.classList.add('todo-ieraksts');
-    ierakstsElem.innerHTML = jaunaTodoTeksts;
-    // - pielāgot funkciju uzdevuma nosaucījumiem
-    // - izmantot tekstu ko lieotoājs padod, kā todo ieraksta tekstu
-    // - atgriezt jauni izveidoto elementu - `return`
-    return ierakstsElem;
-}
 
 // Nodarbības kods:
 ievadForma.addEventListener('submit', function(event) {
