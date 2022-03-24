@@ -1,3 +1,89 @@
+# 11-26-12-ned: JS Funkcijas
+
+Prot definēt JavaScript funkciju. Saprot parametru konceptu. Prot padot funkcijai parametrus. Prot izmantot funkcijas parametrus. Prot atgriezt vērtību no funkcijas.
+
+## 1. Nodarbība
+
+###  Atsākam, kur palikām
+
+- Ja Koda nav es iedodu (Github)
+- Atskatāmies uz "Todo aplikācijas" prasībām
+    * Nepieciešams saraksts, kur attēlot darbus
+    * Nepieciešams veids, kā ievadīt datus
+- Pievienojam Sarakstu:
+
+```html
+<ul>
+    <li>Viens</li>
+    <li>Divi</li>
+</ul>
+```
+
+### Uzdevums:
+
+Atrast saraksta elementu JS un izvadīt to konsolē.
+
+### Funkcijas:
+
+- Funkcijas skaidrojums
+> Funkcija ir kā mainīgais, kurā var saglabāt kodu. Mēs rakstam funkcijas, lai organizētu kodu. Kā arī, lai mijiedarbotos ar citu cilvēku rakstītu kodu (API).
+
+- Mēs jau pazīstam funkcijas:
+
+    * `console.log('čau')`
+    * `document.querySelector('#my-element-id')`
+
+- Definējam funkcijas
+```js
+function sveiciens() {
+    console.log('čau');
+}
+```
+
+- Funkcijas izsaukums:
+```js
+sveiciens();
+```
+
+### Uzdevums
+
+Definēt funkciju, kas atrod un izvada HTML elementu.
+
+---
+
+## 2. Nodarbība
+
+### Parametri
+
+- Funkcijas var pieņemt mainīgos, kā parametrus
+- Tas ļauj pielietot vienu un to pašu loģiku dažādai informācijai
+
+```js
+function sveiciens(vards) {
+    console.log(`Čau, ${vards}!`);
+}
+```
+
+2. Papildinām mūsu funkciju ar parametriem un izmantojam tos
+
+### Uzdevums:
+
+Definēt funkciju `saskaitit`, kas pieņem 2 skaitļus un izvada to summu konsolē.
+
+### Funkcijas atgriezeniskā vertība
+
+- Funkcija var atgriezt vērtību ar `return` atslēgvārdu
+- Kad funkcija atgriež vērtību, tās izpilde beidzās. Neatkarīgi no tā vai ir vēl kods pēc `return` rindiņas sasniegšanas.
+
+```js
+function saskaitit(a, b) {
+    return a + b;
+}
+```
+
+---
+---
+
 ## HTML Elementa atrašana JS:
 
 - Izmantojam `id` atribūtu

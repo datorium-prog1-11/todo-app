@@ -1,22 +1,6 @@
-let sveiciens = 'Čau';
-console.log(sveiciens);
-
+// Piemērs:
 let skaitlis = 6;
 let dalSkaitlis = 4.2;
-console.log(skaitlis, dalSkaitlis);
-
-let patiessVaiNepatiess = false;
-const patiess = true;
-
-let masivs = ['teskts', 'cists teksts', 2, 3];
-skaitlis
-let objekts = {
-    "Jānis": 21233445,
-    "Māris": 24445555
-}
-
-console.log('masīvs', masivs);
-console.log('objekts', objekts);
 
 if (skaitlis > dalSkaitlis) {
     console.log('Nosacījums IR patiess');
@@ -24,42 +8,63 @@ if (skaitlis > dalSkaitlis) {
     console.log('Nosacījums NAV patiess');
 }
 
-console.log('pārbaude', 3 > 2);
-console.log('pārbaude', 3 > 4);
-console.log('pārbaude', (3 > 4) == false);
-
-
-
-let mainigais;
-
-if (mainigais) {
-    console.log('mainīgajam ir vērtība', mainigais);
-} else {
-    console.log('mainigajam nav vērības', mainigais);
-}
-
-// let lemums = confirm("Vai rīts ir labs?");
-// console.log('lēmums', lemums);
-
-// if (lemums) {  // lemums == true
-//     console.log("Jā, rīts ir labs!");
-// } else { // lemums == false
-//     console.log("Ko Tu ar to domā, ka nav labs?");
-// }
-
 let selektors = '#galvenais-virsraksts';
 let galvenaisVirsraksts = document.querySelector(selektors);
 console.log(galvenaisVirsraksts);
 
-if (galvenaisVirsraksts) {
-    console.log("Elements ir atrasts", galvenaisVirsraksts);
-} else {
-    console.log('Elements nav atrasts', selektors);
-    // console.log('Elements nav atrasts', "#galvenais-virsraksts");
+// Nodarbības kods:
+
+// Uzdevums 1 risinājums:
+let sarakstsElem = document.querySelector('#todo-saraksts');
+console.log(sarakstsElem);
+//
+
+function sveiciens(vards) {
+    if (vards) {
+        console.log(`Čau: ${vards}!`);
+    } else {
+        console.log("Kļūda: Parametrs `vards` netika padots!");
+    }
 }
 
-let vRaksts = document.querySelector('.v-raksts');
-console.log('vRaksts', vRaksts);
+// Izsaucam funkciju:
+sveiciens('Alpha'); // Čau Alpha
+// Uzdevuma test:
+sveiciens(); // kļūda
 
-let linksUzGoogle = document.querySelector('#links-uz-google');
-console.log('linksUzGoogle', linksUzGoogle);
+// Uzdevums 2 risinājums:
+function atrastUnIzvadit() {
+    const elements = document.querySelector('#todo-ieraksts-1');
+    console.log('atrasts', elements);
+}
+atrastUnIzvadit();
+
+/*
+Uzdevums 3:
+Pievienot pārbaudi `sveiciens` funkcijā, vai ir padots parametrs `vards`. Ja nav padots, izvadīt kļūdas paziņojumu. Ja ir padots izvadīt sveicienu.
+
+Uzdevums 4:
+Definēt funkciju, kas var pieņemt divus parametrus (skaitļus), saskaitīt viņus un izvadīt rezultātu.
+
+Uzdevums 5:
+Pievienot parametru pārbaudi saskaitīšanas funkcijai. Par katru trūkstošo parametru jāizvda atbilsotša kļūda un tikai, ja abi parametri ir padoti, veicam saskaitīšanu.
+*/
+
+function saskaitisana(a, b) {
+
+    if (a && b) {
+        console.log('Summa:', a + b);
+    } else {
+        if(!a) {
+            console.log('Pirmais parametrs nav padots');
+        }
+        if (!b) {
+            console.log('Otrais parametrs nav padots');
+        }
+    }
+}
+
+saskaitisana(3, 4);
+saskaitisana(undefined, 4);
+saskaitisana(3);
+saskaitisana();
