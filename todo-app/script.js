@@ -39,32 +39,26 @@ function atrastUnIzvadit() {
 }
 atrastUnIzvadit();
 
-/*
-Uzdevums 3:
-Pievienot pārbaudi `sveiciens` funkcijā, vai ir padots parametrs `vards`. Ja nav padots, izvadīt kļūdas paziņojumu. Ja ir padots izvadīt sveicienu.
-
-Uzdevums 4:
-Definēt funkciju, kas var pieņemt divus parametrus (skaitļus), saskaitīt viņus un izvadīt rezultātu.
-
-Uzdevums 5:
-Pievienot parametru pārbaudi saskaitīšanas funkcijai. Par katru trūkstošo parametru jāizvda atbilsotša kļūda un tikai, ja abi parametri ir padoti, veicam saskaitīšanu.
-*/
-
-function saskaitisana(a, b) {
-
-    if (a && b) {
-        console.log('Summa:', a + b);
-    } else {
-        if(!a) {
-            console.log('Pirmais parametrs nav padots');
-        }
-        if (!b) {
-            console.log('Otrais parametrs nav padots');
-        }
-    }
+// Funkcija, kas atgriež vērtību
+function reizinat(a, b) {
+    let reizinajums = a * b;
+    return reizinajums; // Šeit funkcijas izpilde beidas
+    console.log('Pēc return'); // Šindiņa netiks izpildīta
 }
 
-saskaitisana(3, 4);
-saskaitisana(undefined, 4);
-saskaitisana(3);
-saskaitisana();
+let reizinatRezultats = reizinat(5, 4);
+console.log('reizinat rezultāts:', reizinatRezultats);
+
+// Formas elements
+let ievadForma = document.querySelector('#ievad-forma');
+console.log('ievad forma', ievadForma);
+console.log('formas elementi', ievadForma.elements);
+
+let tekstaLauks = ievadForma.elements['teksts'];
+console.log('teksta lauks', tekstaLauks);
+
+let tekstaLaukaVertiba = tekstaLauks.value;
+console.log('teksta lauka vērtība:', tekstaLaukaVertiba);
+
+let izveleLauks = ievadForma.elements['izvele'];
+console.log('izvele', izveleLauks.value);

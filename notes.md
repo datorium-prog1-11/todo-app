@@ -1,3 +1,136 @@
+# 12-02 13-ned: Formas un datu ievade
+
+- Prot izveidot formas elementu.
+- Prot izveidot HTML ievad elementu.
+- Prot izveidot HTML pogu.
+- Prot izveidot funkciju, kas klausās uz notikumiem HTML dokumentā.
+
+## 1. Nodarbība
+
+### Atsākam, kur palikām
+
+- Ja Koda nav es iedodu (Github)
+- Atkārtojam kas ir funkcija
+- Izveidojam formu:
+
+```html
+<form>
+    <input type="text" name="teksts" />
+    <button>Pievienot</button>
+</form>
+```
+
+### Uzdevums:
+
+Uzrakstīt funkciju, kas sareizina 2 skaitļus un izvada konsolē.
+
+### Funkcijas atgriezeniskā vertība
+
+- Funkcija var atgriezt vērtību ar `return` atslēgvārdu
+- Kad funkcija atgriež vērtību, tās izpilde beidzās. Neatkarīgi no tā vai ir vēl kods pēc `return` rindiņas sasniegšanas.
+
+```js
+function saskaitit(a, b) {
+    return a + b;
+}
+```
+
+### HTML Forma
+
+- Lai iegūtu datus no lietotāja mēs izmantojam Formas. Līdzīgi, kā veidlapas.
+- Formas laukos lietotājs vari ievadīt prasīto informāciju.
+- Tālāk mēs šo informāciju varam apstrādāt.
+
+```html
+<form>
+    <!-- Formas saturs -->
+</form>
+```
+
+### HTML Formas elementi
+
+- Ir speciāli elementi ko raksta iekšā HTML formā, kas ir domāti datu savākšanai.
+- Tos sauc par ievad elementiem:
+
+```html
+<input type="text" name="teksts">
+<input type="checkbox" name="keksis">
+<select name="izvele">
+    <option value="">--Izvēlies vienu--</option>
+    <option value="viens">Pirmā iespēja</option>
+    <option value="divi">Otrā iespēja</option>
+</select>
+<button>Spied šeit</button>
+```
+
+### Pievienojam mūsu formai vajadzīgos ielementus
+
+- Ko mums vajag rezultātā?
+- Teksta ievade
+- Poga
+
+### Uzdevums:
+
+Atrast HTML formu JS un izvadīt konsolē.
+
+---
+
+## 2. Notikumi
+
+- Lai zinātu, kad lietotājs veic kādud arbību mēs klausāmies uz "notikumiem" (event)
+- Interneta pārlūks piedāvā dažādus notikumus:
+
+    * Kad lapa ielādējas
+    * Kad nospiesta poga
+    * Kad pakustināta pele
+    * utt...
+
+### Uzdevums:
+
+Atrast pogu un izvadīt konsolē.
+
+### Klausāmies uz pogas klikšķa
+
+```js
+poga.addEventListener('click', function() {
+    console.log('click');
+});
+```
+
+- Notikuma klausītājs saņem `event` parametru
+
+```js
+poga.addEventListener('click', function(event) {
+    console.log('notikums', event);
+});
+```
+
+- Ar `event` parametra palīdzību mēs varam mainīt interneta pārlūka darbību
+
+### Klausāmies uz formas apstiprināšanu
+
+```js
+forma.addEventListener('submit', function(event) {
+    console.log(event);
+});
+```
+
+- Apstrādājam "submit" notikumu - mainām tā sākotnējo darbību
+- Iegūstam formas lauku izmantojot lauka vārdu (`name`):
+
+```js
+let tekstaLauks = forma.elements["teksts"];
+```
+
+- Iegūstam ievad-lauka vērtību ar `.value` atribūtu:
+
+```js
+let lietotajsIevadija = tekstaLauks.value;
+```
+
+---
+---
+
 # 11-26-12-ned: JS Funkcijas
 
 Prot definēt JavaScript funkciju. Saprot parametru konceptu. Prot padot funkcijai parametrus. Prot izmantot funkcijas parametrus. Prot atgriezt vērtību no funkcijas.
