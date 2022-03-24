@@ -1,40 +1,24 @@
-# To do projekta sākums
+## HTML Elementa atrašana JS:
 
-- Paraug demonstrējums
-- Programmas izstrādes plānošana
-- Iepriekšējās nodarbības atkārtojums
+- Izmantojam `id` atribūtu
+- Selektors līdzīgi kā CSS tikai sākas ar `#` - `#id`
+- Izmantojam `document.querySelector` funkciju
+- Piemērs:
 
-## Programmas plānojums
+```html
+<p id="teksts">Šeit ir teksts!</p>
+```
 
-- Kādas funkcijas mēs gribētu aplikācijā
-- Dizaina skice
-- Prasību pilnveide izstrādes laikā
-
-## Uzdevums nr 1.
-
-Sarakstīt 4 funkcijas, kam ir jābūt mūsu aplikācijā.
-
-## Paraug demonstrējums
+```js
+let tekstsElem = document.querySelector('#teksts');
+```
 
 ---
 
-## Sākuma kods
+# HTML elementu atrašana JS
+Saprot, kā darbojas `id` atribūts. Saprot, kā darbojas `id` atribūts. Spēj atrast HTML elementu izmantojot JS.
 
-index.html
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-  </head>
-  <body>
-    <script src="./script.js"></script>
-  </body>
-</html>
-```
-
+---
 ---
 
 # Atkārtojums
@@ -103,3 +87,43 @@ Izvadīt šos mainīgos konsolē.
   - Sareizinām nejuašo skaitli ar `10`, lai dabūtu nejaušu vērtību no 1 līdz 10
   - Izmantojam `confirm()` funkciju lai paprasītu izvēli no lietotāja
   - Izmantojam `if` izteiksmi, lai salīzinātu rezultātus
+
+---
+---
+
+# To do projekta sākums
+
+- Paraug demonstrējums
+- Programmas izstrādes plānošana
+- Iepriekšējās nodarbības atkārtojums
+
+## Programmas plānojums
+
+- Kādas funkcijas mēs gribētu aplikācijā
+- Dizaina skice
+- Prasību pilnveide izstrādes laikā
+
+## Uzdevums nr 1.
+
+Sarakstīt 4 funkcijas, kam ir jābūt mūsu aplikācijā.
+
+## Paraug demonstrējums
+
+---
+
+## Sākuma kods
+
+index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <script src="./script.js"></script>
+  </body>
+</html>
+```

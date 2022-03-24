@@ -28,14 +28,7 @@ console.log('pārbaude', 3 > 2);
 console.log('pārbaude', 3 > 4);
 console.log('pārbaude', (3 > 4) == false);
 
-let lemums = confirm("Vai Tu esi foršs?");
-console.log('lēmums:', lemums);
 
-if (lemums) { // lemums == true
-    console.log('Taisnība!');
-} else { // lemums == false
-    console.log('Nav taisnība! Tu esi Foršs!!!');
-}
 
 let mainigais;
 
@@ -44,3 +37,29 @@ if (mainigais) {
 } else {
     console.log('mainigajam nav vērības', mainigais);
 }
+
+// let lemums = confirm("Vai rīts ir labs?");
+// console.log('lēmums', lemums);
+
+// if (lemums) {  // lemums == true
+//     console.log("Jā, rīts ir labs!");
+// } else { // lemums == false
+//     console.log("Ko Tu ar to domā, ka nav labs?");
+// }
+
+let selektors = '#galvenais-virsraksts';
+let galvenaisVirsraksts = document.querySelector(selektors);
+console.log(galvenaisVirsraksts);
+
+if (galvenaisVirsraksts) {
+    console.log("Elements ir atrasts", galvenaisVirsraksts);
+} else {
+    console.log('Elements nav atrasts', selektors);
+    // console.log('Elements nav atrasts', "#galvenais-virsraksts");
+}
+
+let vRaksts = document.querySelector('.v-raksts');
+console.log('vRaksts', vRaksts);
+
+let linksUzGoogle = document.querySelector('#links-uz-google');
+console.log('linksUzGoogle', linksUzGoogle);
