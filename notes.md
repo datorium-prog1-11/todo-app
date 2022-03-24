@@ -1,3 +1,31 @@
+# q2 03-11 10-ned: Atkārtojums - Darbības ar saraksta elementiem + objekti
+
+- Prot izveidot objektu ar vairākiem laukiem
+- Prot paplašināt esošu programmu ar jaunu funkcionalitāti.
+- Prot pievienot jaunus elementus esošā HTML
+
+### Objekti:
+
+- Mums koda ir objekta piemērs `todo-ieraksts.js` failā.
+
+Piemērs:
+```js
+let obis = {
+    lauks: 'vērtība'
+}
+```
+
+#### Uzdevums:
+
+Definēt objektu, kas varētu aprakstīt cilvēku ar sekojošiem laukiem: vards, vecums, adrese.
+
+#### Uzdevums:
+
+Izveidot masīvu (sarakstu) ar vismaz 3 cilvēkiem.
+
+---
+---
+
 # q2 03-04 9-ned: Darbības ar saraksta elementiem
 
 - Prot paplašināt esošu programmu ar jaunu funkcionalitāti.

@@ -113,22 +113,56 @@ for (
     console.log('i elements', uzdSaraksts[i]);
 }
 
-const ieraksts2 = {
-    teksts: 'Izvest ārā suni',
-    izdarits: false,
-    izveidots: new Date()
+let cilveks = {
+    // atslēga + vērtība = ieraksts
+    vards: 'Mārtiņš', // ieraksti tiek atdalīti ar komatu
+    vecums: 25,
+    adrese: {
+        iela: 'Brīvības iela',
+        numurs: 20
+    },
+    iesauka: "misters m"
 };
 
-const ierakstuSaraksts = [
+let cilveki = [
     {
-        teksts: 'izvest ārā suni',
-        izpildits: false
+        vards: 'Anna',
+        vecums: 10,
+        adrese: {
+            iela: 'Barona iela',
+            numurs: 1
+        }
     },
     {
-        teksts: 'aiziet uz veikalu',
-        izdarits: true
-    }
+        // atslēga + vērtība = ieraksts
+        vards: 'Mārtiņš', // ieraksti tiek atdalīti ar komatu
+        vecums: 25,
+        adrese: {
+            iela: 'Brīvības iela',
+            numurs: 20
+        },
+        iesauka: "misters m"
+    },
+    {
+        vards: 'Maija',
+        vecums: 15,
+        adrese: {
+            iela: 'Barona iela',
+            numurs: 20
+        }
+    },
 ];
 
+function izvaditAdresi(cilveks) {
+    console.log(`${cilveks.vards} dzīvo uz ${cilveks.adrese.iela}`);
+}
 
-console.log("ieraksta objekts", ieraksts2);
+for (let i = 0; i < cilveki.length; i = i + 1) {
+    const cilveks = cilveki[i];
+    izvaditAdresi(cilveks);
+}
+
+console.log("Risinājums ar for-of");
+for (const cilveks of cilveki) {
+    izvaditAdresi(cilveks);
+}
