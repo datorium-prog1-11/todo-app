@@ -1,3 +1,12 @@
+# q2 02-11 6-ned: Koda reorganizācija un organizācija - Refactor
+
+- Prot sadalīt saliktu uzdevumu pa soļiem.
+- Prot sadalīt programmu pa daļām.
+
+--//--
+
+---
+---
 # q2 02-04 5-ned: Koda reorganizācija un organizācija - Refactor
 
 - Prot izmantot jaunās funkcijas
