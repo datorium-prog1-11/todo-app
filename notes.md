@@ -1,3 +1,68 @@
+# 12-17 15-ned: Interakcija ar lietotāju - JS Notikumi
+
+- Prot izveidot jaunu HTML elementu izmantojot JavaScript.
+- Prot pievienot HTML elementu eksistējošam HTML elementa saturam.
+
+## Atsākam, kur palikām
+
+- Ja Koda nav es iedodu (Github)
+- Atkārtojam, kas ir Notikumi (event)
+
+---
+
+## 1. Nodarbība
+
+### Sagatavojam vidi
+
+- Nodzēšam lieko JS un pogas id
+- Mums vairs nav nepieciešams klausīties uz pogu, jo klausīsimies formu
+
+### Uzdevums
+
+Pievienot klausītāju uz pogas `submit` notikumu. Kad notiek formas `submit`, izvadām konsolē "SUBMIT".
+
+### Uzdevums:
+
+Apturēt formas noklusēto darbību, kadnotiek `submit`.
+
+### Izveidojam HTML elementu ar JS
+
+```js
+let paragrafs = document.createElement('p');
+console.log('p', paragrafs);
+```
+
+---
+
+## 2. Nodarbība
+
+### Pievienojam mūsu elementam saturu
+
+```js
+paragrafs.innerHTML = 'Čau visiem!';
+console.log('p', paragrafs);
+```
+
+### Pievienojam mūsu paragrāfu dokumenta saturam
+
+- Atrodam `<body>` elementu - `document.body`
+- Pievienojam elementu
+
+```js
+document.body.append(paragrafs);
+```
+
+### Uzdevums
+
+Kad notiek formas `submit`:
+- [x] Atrodam todo saraksta elementu
+- [x] Izveidojam jaunu `li` elementu
+- [x] Ierakstam šī `li` elementa saturā vērtību no `input`
+- [x] Pievienojam šo `li` elementu darbu sarakstam
+
+---
+---
+
 # 12-10 14-ned: Interakcija ar lietotāju - JS Notikumi
 
 Prot izveidot funkciju, kas klausās uz notikumiem HTML dokumentā.
