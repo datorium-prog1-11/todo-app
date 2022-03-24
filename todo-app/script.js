@@ -1,13 +1,6 @@
 let sarakstsElem = document.querySelector('#todo-saraksts');
 console.log(sarakstsElem);
 
-sarakstsElem.addEventListener('click', function(event) {
-    let klikElem = event.target;
-    if (klikElem.classList.contains('dzest')) {
-        console.log("dzēst");
-    }
-});
-
 // Funkcija, kas atgriež vērtību
 function reizinat(a, b) {
     let reizinajums = a * b;
@@ -120,3 +113,22 @@ for (
     console.log('i elements', uzdSaraksts[i]);
 }
 
+const ieraksts2 = {
+    teksts: 'Izvest ārā suni',
+    izdarits: false,
+    izveidots: new Date()
+};
+
+const ierakstuSaraksts = [
+    {
+        teksts: 'izvest ārā suni',
+        izpildits: false
+    },
+    {
+        teksts: 'aiziet uz veikalu',
+        izdarits: true
+    }
+];
+
+
+console.log("ieraksta objekts", ieraksts2);

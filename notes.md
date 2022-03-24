@@ -1,3 +1,37 @@
+# q2 03-04 9-ned: Darbības ar saraksta elementiem
+
+- Prot paplašināt esošu programmu ar jaunu funkcionalitāti.
+- Prot pievienot jaunus elementus esošā HTML
+
+## Uzdevumu dzēšana
+
+### Uzdevums:
+
+Nosaukt darbības, kas mums jāveic, lai izveidotu todo ierakstu dzēšanas funkcionalitāti.
+
+### Uzdevums:
+
+Veikt soļus
+
+### Uzdevums:
+
+Pierakstīt komentārus, ko katra rindiņa dara.
+
+---
+
+## Uzdevuma izpildīšana
+
+### Uzdevums:
+
+Nosaukt darbības, kas mums jāveic, lai izveidotu todo ierakstu izpildīšanas funkcionalitāti.
+
+### Uzdevums:
+
+Izpildīt soļus.
+
+---
+---
+
 # q2 02-18 7-ned: Koda reorganizācija un organizācija - Refactor
 
 - Prot grupēt saistītu funkcionalitāti pa objektiem
