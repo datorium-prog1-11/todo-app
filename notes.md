@@ -1,3 +1,12 @@
+# q2 02-04 5-ned: Koda reorganizācija un organizācija - Refactor
+
+- Prot izmantot jaunās funkcijas
+- Prot darīt atbrīvoties no veca neizmantota koda
+
+--//--
+
+---
+---
 # q2 01-27 4-ned: Koda reorganizācija un organizācija - Refactor
 
 Prot izdalīt pašpietiekamu koda vienību atsevišķā funkcijā.

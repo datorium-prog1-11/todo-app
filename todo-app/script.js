@@ -30,34 +30,16 @@ console.log('paragrafs', paragrafs);
 console.log('body', document.body);
 document.body.append(paragrafs);
 
-// Jauna elementa izveidošana
-/*
-Pārvietot elementa izveidi jaunā funkcijā, tā lai padodot jauna uzdevuma nosaukumu, mēs iegūtu li elementu:
-Lai funkcijas izsaukums izskatās šādi:
+// - Izveidot funkciju
+function jaunsTodoIeraksts(jaunaTodoTeksts) {
 
-```
-// jaunsIeraksts ir li elements
-const jaunsIeraksts = izveidotIerakstu(teksts);
-```
-
-- [x] jāuzraksta jauna funkcijas definīcija
-- [x] Jāpārvieto mūsu elementa izveides kods
-- [x] Pārveidojam funkciju tā, lai tā ņem teksta vērtību no funkcijas prametra
-- [x] Atgriežam jauno elementu (`return`)
-- [x] Izsaukt jauno funkciju, lai izveidotu elementu
-
-*/
-function jaunsIeraksts(jaunaIerakstaTeksts) {
-    // Izveidojam junu elementu
-    // - izmantojam `document` objektu, lai strādātu ar HTML
-    // - izmantojam `li` elementu, jo tas iet sarakstā - `ul` elementā
-    // šis izveidos - <li></li> elementu
-    let ierakstsElem = document.createElement('li');
+    // - Pārvietojam ieraksta izveides kodu uz šejieni
+    const ierakstsElem = document.createElement('li');
     ierakstsElem.classList.add('todo-ieraksts');
-
-    // Nomainījām tekstaLauks.value uz jaunaIerakstaTeksts
-    ierakstsElem.innerHTML = jaunaIerakstaTeksts;
-
+    ierakstsElem.innerHTML = jaunaTodoTeksts;
+    // - pielāgot funkciju uzdevuma nosaucījumiem
+    // - izmantot tekstu ko lieotoājs padod, kā todo ieraksta tekstu
+    // - atgriezt jauni izveidoto elementu - `return`
     return ierakstsElem;
 }
 
@@ -103,7 +85,7 @@ ievadForma.addEventListener('submit', function(event) {
 
 
     // PIEVIENOŠANA:
-    const ierakstsElem = jaunsIeraksts(tekstaLauks.value);
+    const ierakstsElem = jaunsTodoIeraksts(tekstaLauks.value);
 
     // Elementa pievienošana paliek te pat
     sarakstsElem.append(ierakstsElem);
