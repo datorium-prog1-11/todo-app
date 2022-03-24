@@ -1,3 +1,135 @@
+# q2 01-04 1-ned: JS Cikli un Datu saraksti
+
+- Prot izmantot cikla konstrukcijas.
+- Prot izmantot saraksta datu struktūru.
+
+## Atsākam, kur palikām
+
+- Ja Koda nav es iedodu (Github)
+- Pēdējā uzdevuma risinājums
+
+### Uzdevums
+
+Kad notiek formas `submit`:
+- Atrodam todo saraksta elementu
+- Izveidojam jaunu `li` elementu
+- Ierakstam šī `li` elementa saturā vērtību no `input`
+- Pievienojam šo `li` elementu darbu sarakstam
+
+---
+
+## 1. Nodarbība
+
+### Datu saraksts
+
+- Mainīgais, kas var saturēt vairākas vērtības
+- Saraksts, Masīvs, Array, List, Set, Vector
+- Objekts, HashMap, Vārdnīca, Dictionary
+
+```js
+//               0        1       2
+let saraksts = ['viens', 'divi', 'trīs'];
+console.log(saraksts);
+console.log(saraksts.length);
+```
+
+### Elementu iegūšana
+
+- Pēc indeksa
+- Indekss sākas ar `0`
+
+```js
+let pirmaisElements = saraksts[0];
+```
+
+- Cikliski
+- Automātiski palielinot indeksu
+
+```js
+for (let i = 0; i < saraksts.length; i++) {
+    let kartejaisElements = saraksts[i];
+    console.log('masīva elements', i, kartejaisElements);
+}
+```
+
+- Cikla izklāsts:
+```js
+let i = 0;
+
+if (i < saraksts.length) { // saraksts.length = 3
+    let kartejaisElements = saraksts[0];
+    console.log(i, kartejaisElements);
+
+    i = 1;
+}
+
+if (i < saraksts.length) { // saraksts.length = 3
+    let kartejaisElements = saraksts[1];
+    console.log(i, kartejaisElements);
+
+    i = 2;
+}
+
+if (i < saraksts.length) { // saraksts.length = 3
+    let kartejaisElements = saraksts[2];
+    console.log(i, kartejaisElements);
+
+    i = 3;
+}
+
+if (i < saraksts.length) { // saraksts.length = 3
+    let kartejaisElements = saraksts[2];
+    console.log(i, kartejaisElements);
+
+    i = 4;
+}
+
+// ...
+```
+
+- Iteratīvi, prasot nākamo elementu
+
+```js
+for (const elements of saraksts) {
+    let kartejaisElements = elements;
+}
+```
+
+### Elementu pievienošana:
+
+```js
+saraksts.push('četri');
+```
+
+### Elementu dzēšana:
+
+```js
+saraksts.pop(2)
+```
+
+---
+
+## 2. Nodarbība
+
+Pievienojam klases `<li>` elementiem.
+
+### 1. Uzdevums:
+
+Atrodam visus sarakstā esošos `<li>` elementus.
+- Izmantojam `document.querySelectorAll()`
+
+### 2. Uzdevums:
+
+- Izmantot `element.innerText` atribūtu, lai salīdzinātu vērtību
+
+### Validācija
+
+- Atcelt elementa pievienošanu, ja dotā vērtība jau eksistē sarakstā
+- Šeit jāņem vērā, ka jau easm funkcijā un varam izmantot `return`
+
+---
+---
+
 # 12-17 15-ned: Interakcija ar lietotāju - JS Notikumi
 
 - Prot izveidot jaunu HTML elementu izmantojot JavaScript.
