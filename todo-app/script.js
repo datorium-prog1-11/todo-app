@@ -36,15 +36,48 @@ ievadForma.addEventListener('submit', function(event) {
     // jo tas salauztu mūsu kodu - viss sākots no sākuma
     event.preventDefault();
 
-    // Izveidojam jaunu elementu
-    // - izmantojam `document` objektu, lai strādātu ar HTML
-    // - izmantojam `li` elementu, jo tas iet sarakstā - `ul` elementā
-    // šis izveidos - <li></li> elementu
-    let ierakstsElem = document.createElement('li');
     // Atrodam teksta ievad-lauku izmantojot formas elementu
     // - Visi formas ievad-elementi ir pieejami zem `.elements` atribūta
     // - Formas ievad elementus mēs atrodam pēc vārda - name atribūta
     let tekstaLauks = ievadForma.elements['teksts'];
+
+    // VALIDĀCIJA:
+
+    // izmantojam šo: true == !false
+    // false == !true
+    // !'' == true
+    let tekstaLauksIrTukss = !tekstaLauks.value;
+
+    if (tekstaLauksIrTukss) {
+        alert('Lūdzu ievadi vērtību!');
+        return;  // šeit funkcijas izpilde beidzās
+    }
+
+
+    // Iegūstam visus elementus ar klasi class="todo-ieraksts"
+    let todoIeraksti = document.querySelectorAll('.todo-ieraksts');
+
+    // Paskatamies katru konkrēto elementu ar for ciklu:
+    for (const ieraksts of todoIeraksti) {
+        // `ieraksts` ir esošais ieraksts
+        // Pārbaudam vai ieraksts jau eksistē:
+        let ierakstsJauEksiste = ieraksts.innerText == tekstaLauks.value;
+
+        if (ierakstsJauEksiste) {
+            alert('Šāds ieraksts jau eksistē!');
+            return;
+        }
+    }
+
+    // PIEVIENOŠANA:
+
+
+    // Izveidojam junu elementu
+    // - izmantojam `document` objektu, lai strādātu ar HTML
+    // - izmantojam `li` elementu, jo tas iet sarakstā - `ul` elementā
+    // šis izveidos - <li></li> elementu
+    let ierakstsElem = document.createElement('li');
+    ierakstsElem.classList.add('todo-ieraksts');
 
     ierakstsElem.innerHTML = tekstaLauks.value;
     sarakstsElem.append(ierakstsElem);
@@ -99,75 +132,3 @@ for (
     console.log('i elements', uzdSaraksts[i]);
 }
 
-// Kas notiek datoram smadzenēs, kad mēs izpildam ciklu:
-
-// 1. Mēs definējam mainīgo
-let i = 0;
-
-// 2. Pārbaudām nosacījumu - vai izpildīt cikla saturu?
-if (i < uzdSaraksts.length) {
-
-    // Ja nosacījums izpildās, tad izpildam cikla saturu:
-    console.log('i', i);
-    console.log('i elements', uzdSaraksts[i]);
-
-    // Pēc cikla satura izpildes, palielinam skaitītāju:
-    i = 1;
-}
-
-if (i < uzdSaraksts.length) {
-    // Ja nosacījums izpildās, tad izpildam cikla saturu:
-    console.log('i', i);
-    console.log('i elements', uzdSaraksts[i]);
-
-    i = 2;
-}
-
-if (2 < 7) {
-    // Ja nosacījums izpildās, tad izpildam cikla saturu:
-    console.log('i', 2);
-    console.log('i elements', 'trīs');
-
-    i = 3;
-}
-
-if (3 < 7) {
-    // Ja nosacījums izpildās, tad izpildam cikla saturu:
-    console.log('i', 3);
-    console.log('i elements', 'četri');
-
-    i = 4;
-}
-
-let jaunsForSaraksts = ['Kāposts', 'Burkāns', 'Gurķis'];
-
-for (const ieraksts of jaunsForSaraksts) {
-    console.log('for of ieraksts', ieraksts);
-}
-
-// Uzdevums
-
-// garums = 7
-// 7 / 2 = 3.5
-// noapaļojam uz indeksu Math.floor(3.5) = 3
-//                                         3
-let elementi = ['viens', 'divi', 'trīs', 'četri', 'pieci', 'seši', 'septiņi', 'Astoņi'];
-
-let videjaisI = Math.floor(elementi.length / 2);
-// % atgriež dalīšanas atlikumu
-let masivaIrParaElementi = elementi.length % 2 === 0;
-
-// Ja ir pāra skaits elementu, tad noņemam 1 no rezultāta,
-// lai dabūtu to, kas ir pirms vidus
-if (masivaIrParaElementi) {
-    videjaisI = videjaisI - 1;
-}
-
-for (let i = 1; i < elementi.length - 1; i += 1) {
-
-    if (i === videjaisI) {
-        console.log("Vidējais elements", i, elementi[i]);
-    } else {
-        console.log(i, elementi[i]);
-    }
-}

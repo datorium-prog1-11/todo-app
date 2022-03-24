@@ -1,3 +1,65 @@
+# q2 01-21 3-ned: Datu validācija
+
+- Prot apsvērt ievadīto datu pareizību.
+- Prot salīdzināt seošos datus ar jaunajiem.
+
+# 1. Nodarbība
+
+## Vairāku elementu atrašana
+
+Izmantojam klases, lai atzīmētu vairākus elementus:
+
+Pievienojam klasi `<li>` elementam.
+
+```html
+<li class="todo-ieraksts">Ieraksts</li>
+```
+
+Pievienojam izveidošanas beigās
+```js
+document.querySelectorAll('.todo-ieraksts');
+```
+
+## Pievienojam klasi izveidojot jaunu elementu
+
+```js
+let ierakstsElem = document.createElement('li');
+ierakstsElem.classList.add('todo-ieraksts');
+```
+
+## Datu validācija
+
+Pārbaudām vai ievad-laukā ir kaut kas ievadīts, pirms mēģinam pievienot.
+
+```js
+if (!tekstaLauks.value) {
+    alert("Lūdzu ievadi tekstu");
+    return;
+}
+```
+
+## 1. Uzdevums:
+
+Atrodam visus sarakstā esošos `<li>` elementus.
+- Izmantojam `document.querySelectorAll()`
+
+## 2. Uzdevums:
+
+Izvdidojam pārbaudi vai jaunā vērtība ir unikāla:
+
+- Izmantojam `document.querySelectorAll()`, lai atrastu visus saraksta elementus
+- Izmantojam `for` ciklu, lai pārvietotos pa elementu sarakstu
+- Izmantot `element.innerText` atribūtu, lai salīdzinātu vērtību
+- Beidzam probrammu, ja vērtības atkārtojas
+
+## Validācija
+
+- Atcelt elementa pievienošanu, ja dotā vērtība jau eksistē sarakstā
+- Šeit jāņem vērā, ka jau easm funkcijā un varam izmantot `return`
+
+---
+---
+
 # q2 01-14 2-ned: JS Cikli
 
 Prot izmantot cikla konstrukcijas.
