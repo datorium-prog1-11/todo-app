@@ -60,5 +60,20 @@ console.log('teksta lauks', tekstaLauks);
 let tekstaLaukaVertiba = tekstaLauks.value;
 console.log('teksta lauka vērtība:', tekstaLaukaVertiba);
 
-let izveleLauks = ievadForma.elements['izvele'];
-console.log('izvele', izveleLauks.value);
+// console.log('Uzdevums:', ievadForma.elements['uzd-input'].value);
+
+let poga = document.querySelector('#poga');
+console.log('poga', poga);
+
+poga.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log('click');
+});
+
+let uzdLinks = document.querySelector('#uzd-link');
+console.log('link', uzdLinks);
+
+uzdLinks.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log('Linka saite:', uzdLinks.href);
+});

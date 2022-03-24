@@ -1,3 +1,80 @@
+# 12-10 14-ned: Interakcija ar lietotāju - JS Notikumi
+
+Prot izveidot funkciju, kas klausās uz notikumiem HTML dokumentā.
+
+## Atsākam, kur palikām
+
+- Ja Koda nav es iedodu (Github)
+- Atkārtojam kas ir funkcija
+
+### Uzdevums:
+
+Pievienot jaunu teksta lauku mūsu formai ar sākotnējo vērtību. Nolasīt vērtību no šī lauka izmantojot formas elementu.
+
+---
+
+## 1. Nodarbība
+
+### Notikumi
+
+> Nodzēšam liekos formas elementus un pievinojam pogu
+
+- Lai zinātu, kad lietotājs veic kādud arbību mēs klausāmies uz "notikumiem" (event)
+- Interneta pārlūks piedāvā dažādus notikumus:
+
+    * Kad lapa ielādējas
+    * Kad nospiesta poga
+    * Kad pakustināta pele
+    * utt...
+
+#### Uzdevums:
+
+Atrast pogu un izvadīt konsolē.
+
+#### Klausāmies uz pogas klikšķa
+
+```js
+poga.addEventListener('click', function() {
+    console.log('click');
+});
+```
+
+- Notikuma klausītājs saņem `event` parametru
+
+```js
+poga.addEventListener('click', function(event) {
+    console.log('notikums', event);
+});
+```
+
+#### Uzdevums:
+
+Izmantojot teksta lauka `keydown` notikumu, izvadīt teksta lauka vērtīb pēc taustiņa nospiešanas.
+
+---
+
+## 2. Nodarbība
+
+### Klausāmies uz formas apstiprināšanu
+
+- Mēs varam apstiprināt visu formas elementu izmaiņas vienlaicīgi.
+
+```js
+forma.addEventListener('submit', function(event) {
+    console.log(event);
+});
+```
+
+- Ar `event` parametra palīdzību mēs varam mainīt interneta pārlūka darbību.
+- Apturam lapas refrešošanu ar `event.preventDefault()`
+
+#### Uzdevums:
+
+Nolasām teksta lauka vērtību un izvadām to konsolē, kad notiek formas `submit` notikums.
+
+---
+---
+
 # 12-02 13-ned: Formas un datu ievade
 
 - Prot izveidot formas elementu.
