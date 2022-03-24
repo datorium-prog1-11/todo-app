@@ -30,6 +30,37 @@ console.log('paragrafs', paragrafs);
 console.log('body', document.body);
 document.body.append(paragrafs);
 
+// Jauna elementa izveidošana
+/*
+Pārvietot elementa izveidi jaunā funkcijā, tā lai padodot jauna uzdevuma nosaukumu, mēs iegūtu li elementu:
+Lai funkcijas izsaukums izskatās šādi:
+
+```
+// jaunsIeraksts ir li elements
+const jaunsIeraksts = izveidotIerakstu(teksts);
+```
+
+- [x] jāuzraksta jauna funkcijas definīcija
+- [x] Jāpārvieto mūsu elementa izveides kods
+- [x] Pārveidojam funkciju tā, lai tā ņem teksta vērtību no funkcijas prametra
+- [x] Atgriežam jauno elementu (`return`)
+- [x] Izsaukt jauno funkciju, lai izveidotu elementu
+
+*/
+function jaunsIeraksts(jaunaIerakstaTeksts) {
+    // Izveidojam junu elementu
+    // - izmantojam `document` objektu, lai strādātu ar HTML
+    // - izmantojam `li` elementu, jo tas iet sarakstā - `ul` elementā
+    // šis izveidos - <li></li> elementu
+    let ierakstsElem = document.createElement('li');
+    ierakstsElem.classList.add('todo-ieraksts');
+
+    // Nomainījām tekstaLauks.value uz jaunaIerakstaTeksts
+    ierakstsElem.innerHTML = jaunaIerakstaTeksts;
+
+    return ierakstsElem;
+}
+
 // Nodarbības kods:
 ievadForma.addEventListener('submit', function(event) {
     // Apturam notikuma defaulto darbību - nepārlādējam dokumentu
@@ -57,29 +88,24 @@ ievadForma.addEventListener('submit', function(event) {
     // Iegūstam visus elementus ar klasi class="todo-ieraksts"
     let todoIeraksti = document.querySelectorAll('.todo-ieraksts');
 
-    // Paskatamies katru konkrēto elementu ar for ciklu:
+    // TODO: 2. uzd risinājums
     for (const ieraksts of todoIeraksti) {
-        // `ieraksts` ir esošais ieraksts
-        // Pārbaudam vai ieraksts jau eksistē:
+        console.log(ieraksts.innerText); // <- Vai viņa ir šeit?
+        console.log(tekstaLauks.value); // <- jaunā vērtība
+
         let ierakstsJauEksiste = ieraksts.innerText == tekstaLauks.value;
 
         if (ierakstsJauEksiste) {
-            alert('Šāds ieraksts jau eksistē!');
+            alert('Šāds ieraksts jau eksistē');
             return;
         }
     }
 
+
     // PIEVIENOŠANA:
+    const ierakstsElem = jaunsIeraksts(tekstaLauks.value);
 
-
-    // Izveidojam junu elementu
-    // - izmantojam `document` objektu, lai strādātu ar HTML
-    // - izmantojam `li` elementu, jo tas iet sarakstā - `ul` elementā
-    // šis izveidos - <li></li> elementu
-    let ierakstsElem = document.createElement('li');
-    ierakstsElem.classList.add('todo-ieraksts');
-
-    ierakstsElem.innerHTML = tekstaLauks.value;
+    // Elementa pievienošana paliek te pat
     sarakstsElem.append(ierakstsElem);
 });
 

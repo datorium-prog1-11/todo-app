@@ -1,3 +1,171 @@
+# q2 01-27 4-ned: Koda reorganizācija un organizācija - Refactor
+
+Prot izdalīt pašpietiekamu koda vienību atsevišķā funkcijā.
+
+## 1. Nodarbība
+
+### 2. Uzdevuma risinājums
+
+#### Uzdevums:
+
+Izvdidojam pārbaudi vai jaunā vērtība ir unikāla:
+
+- Izmantojam `document.querySelectorAll()`, lai atrastu visus saraksta elementus
+- Izmantojam `for` ciklu, lai pārvietotos pa elementu sarakstu
+- Izmantot `element.innerText` atribūtu, lai salīdzinātu vērtību
+- Beidzam probrammu, ja vērtības atkārtojas
+
+#### Risinājums:
+
+1. Jāsaprot vai jaunā vērtība jau ir sarakstā
+2. Izmantojam `for` ciklu, lai pārvietotos pa saraksta elementiem:
+```js
+for (const ieraksts of todoIeraksti) {
+  console.log(ieraksts);
+}
+```
+
+3. Izmantojam elementa `.innerText` parametru, lai noskaidrotu tā iekšējo teksta vērtību:
+```js
+for (const ieraksts of todoIeraksti) {
+  console.log(ieraksts.innerText);
+}
+```
+
+4. Izmantojam ievadlauka `.value` parametru, lai noskaidrotu jauno vērtību:
+```js
+for (const ieraksts of todoIeraksti) {
+  console.log(ieraksts.innerText);
+  console.log(tekstaLauks.value);
+}
+```
+
+5. Salīdzinām katra ieraksta tekstuālo vērtību ar jauno vērtību, lai saprastu vai tās sakrīt (tāpat ka`if`):
+```js
+let ierakstsJauEksiste = ieraksts.innerText == tekstaLauks.value;
+console.log('Ieraksts jau eksistē: ', ierakstsJauEksiste);
+```
+
+6. Izmantojam `if` izteiksmi, lai reaģētu uz situāciju, kad ieraksts jau eksistē:
+```js
+if (ierakstsJauEksiste) {
+  alert('Šāds ieraksts jau eksistē!');
+}
+```
+
+7. Izmantojam `return`, lai apturētu jauna elementa izveidi, ja elements jau eksistē:
+```js
+if (ierakstsJauEksiste) {
+  alert('Šāds ieraksts jau eksistē!');
+  return;
+}
+```
+
+8. Satīram liekos `console.log`:
+```js
+for (const ieraksts of todoIeraksti) {
+    // `ieraksts` ir esošais ieraksts
+    // Pārbaudam vai ieraksts jau eksistē:
+    let ierakstsJauEksiste = ieraksts.innerText == tekstaLauks.value;
+
+    if (ierakstsJauEksiste) {
+        alert('Šāds ieraksts jau eksistē!');
+        return;
+    }
+}
+```
+
+---
+
+### Refaktorings
+
+Lai kods būtu labāk saprotams un vieglāk uzturams to sadala pa daļām
+
+- pa funkcijām
+- pa vairākiem failiem
+
+#### Izdalām dažādas lietas, ko aplikācija dara
+
+- Datu attēlošana (tā jau ir izdalīta HTML failā)
+
+- Jaunu datu pievienošana
+  - Jaunu datu validācija
+    - ir vērtība?
+    - vērtība ir unikāla?
+    - vēl kas?
+  - Jauna elementa izveidošana
+    - Izveidojam elementu
+    - Piešķiram klasi
+    - vēl kas?
+
+#### Sadalām datu ievades procesu
+
+##### Izdalām jauna elementa izveidi atsevišķā funkcijā
+
+Funkcijai ir jābūt skaidram nosaukumam.
+
+```js
+function jaunsTodoIeraksts(teksts) {
+    let ierakstsElem = document.createElement('li');
+    ierakstsElem.classList.add("todo-ieraksts");
+}
+```
+
+##### Uzdevums:
+
+Iznest validācijas kodu atsevišķā funkcijā.
+
+- Funkcija pieņem tekstu no ievadlauka
+- Ja ievadītie dati nav pieņemami, funkcija atgriež kļūdas tekstu
+- Ja dati ir pieņemami, neatgriež neko
+- Izsaucam šo funkciju, pirms elementa veidošanas
+
+---
+
+### Funkcionalitātes grupēšana pa failiem
+
+Parasti programmas sastāv no identificējamām daļām. Mūsu gadījumā:
+
+- Ievad forma
+- Darbu saraksts
+- Darbu saraksta elements
+
+Formai un elementu sarakstam nepieciešamais kods mums ir maz, līdz ar to nav to vērts izdalīt.
+
+Bet darba ierakstam ir daudz loģikas. Un nāks klāt arī CSS.
+
+#### Grupējam kodu pēc funkcionālām daļām
+
+- Izveidojam mapi `todo-ieraksts`
+- Izveidojam tajā failus:
+  - `todo-ierakts.js`
+  - `todo-ierakts.css`
+
+Šādi mums būs viegli atrast visu loģiku, ka saistīta ar ierakstu.
+
+- Pārvietojam ar ierakstu saistītās funkcijas uz jauno failu
+  - Todo ieraksta izveide
+  - Todo ieraksta validācija
+
+- Pievienojam failu HTML (pirms script.js)
+- Notestējam ka viss strādā
+
+#### Funkcionalitātes grupēšana objektos
+
+Līdzīgi kā Browsera API mēs varam grupēt saistīto funkcionalitāti kopā "objektā". Tas ļauj vieglāk saprast kādas funkcijas darbojas kopā un ar ko tās ir saistītas.
+
+Pārveidojam mūsu TODO faila saturu:
+
+```js
+const TodoIeraksts = {
+    jauns: function() {},
+    validet: function() {}
+}
+```
+
+---
+---
+
 # q2 01-21 3-ned: Datu validācija
 
 - Prot apsvērt ievadīto datu pareizību.
