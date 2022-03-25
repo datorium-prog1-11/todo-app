@@ -24,9 +24,9 @@ const TodoIeraksts = {
         }
 
         // Iegūstam visus elementus ar klasi class="todo-ieraksts"
-        let todoIeraksti = document.querySelectorAll('.todo-ieraksts');
+        let todoIerakstiTeksti = document.querySelectorAll('.todo-ieraksts__teksts');
 
-        for (const ieraksts of todoIeraksti) {
+        for (const ieraksts of todoIerakstiTeksti) {
             console.log(ieraksts.innerText); // <- Vai viņa ir šeit?
             console.log(jaunaTodoTeksts); // <- jaunā vērtība
 

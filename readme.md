@@ -1,3 +1,66 @@
+# Darbības ar saraksta elementiem 2
+
+- Prot pievienot funkcionalitāti dinaimski izveidotiem elementiem ar JS
+
+# Atsākam, kur palikām
+
+- Ja Koda nav es iedodu (Github)
+- https://github.com/datorium-prog1-11/todo-app
+
+# Validācijas problēma
+
+Pievienojot elementu mēs nevaram vairs precīzi salīdzināt jauno tekstu ar esošajiem teksta fragmentiem.
+
+## Uzdevums: Kādas idejas?
+
+- Pielikt tekstu `"dzēst"` jaunam tekstam tekstam?
+- Ielikt tekstu atsevišķā elementā?
+
+### Risinājums:
+
+Ieliekam todo elementa tekstu atsevišķā elementā.
+
+```html
+<span class="todo-ieraksts__teksts">Todo elementa teksts</span>
+```
+
+Piem.:
+```html
+<li class="todo-ieraksts">
+  <span class="todo-ieraksts__teksts">Aiziet uz veikalu</span>
+  <button class="todo-ieraksts_dzest">dzēst</button>
+</li>
+```
+
+## Salabojam Validāciju:
+
+Izmantojam jaunot teksta elementu nevis visu todo elementu, lai pārbaudītu esošos uzdevumus:
+
+```js
+let todoIerakstiTeksti = document.querySelectorAll('.todo-ieraksts__teksts');
+
+for (const ieraksts of todoIerakstiTeksti) {
+    // Validācija ...
+}
+```
+
+## Uzdevums:
+
+`todo-ieaksts.js` failā `jauns` metodē pievienot nepieciešamo kodu, lai izveidotu <span> elementu un ierakstītu todo ieraksta tekstu tajā.
+
+### Risinājums:
+
+```js
+const ierakstaTekstsElem = document.createElement('span');
+ierakstaTekstsElem.classList.add('todo-ieraksts__teksts');
+ierakstaTekstsElem.innerHTML = jaunaTodoTeksts;
+
+ierakstsElem.appendChild(ierakstaTekstsElem);
+```
+
+---
+---
+
 # q2 03-11 10-ned: Atkārtojums - Darbības ar saraksta elementiem + objekti
 
 - Prot izveidot objektu ar vairākiem laukiem
