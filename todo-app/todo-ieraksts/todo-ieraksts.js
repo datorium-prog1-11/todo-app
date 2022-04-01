@@ -19,7 +19,7 @@ const TodoIeraksts = {
     },
 
     validet: function(jaunaTodoTeksts) {
-        if (!tekstaLauks.value) {
+        if (!jaunaTodoTeksts) {
             return 'Lūdzu ievadi vērtību!';  // šeit funkcijas izpilde beidzās
         }
 
