@@ -1,3 +1,73 @@
+# Darbības ar saraksta elementiem 3
+
+- Prot patstāvīgi veidot projektu pēc dotajām prasībām.
+- Saprot funkcijas darbības principus un tās iekļaušanu objektā.
+- Prot patstāvīgi izveidot dzēšanas funkciju un savienot to ar attiecīgajiem koda elementiem.
+
+## Elementa dzēšana
+
+Mēs jau izveidojām `dzēst` pogu. Tagad tai jāpiešķir darbība.
+
+### 1. Uzdevums
+
+Pievienot klikšķa klausītāju dzēst pogām, kas ir HTML dokumentā. Kad lietotājs uzspiež uz pogas `dzēst`, izvadīt konsolē "DZĒST".
+
+#### Risinājums:
+
+```js
+let dzestPogaElems = document.querySelectorAll('.todo-ieraksts_dzest');
+for (const dzestPogaElem of dzestPogaElems) {
+    dzestPogaElem.addEventListener('click', function() {
+        console.log('dzēst');
+    });
+}
+```
+
+### 2. Uzdevums
+
+Pievienot klikšķa klausītāju ar JS izveidotām pogoām. Kad lietotājs uzspiež uz pogas `dzēst`, izvadīt konsolē "DZĒST".
+
+#### Risinājums:
+
+```js
+const TodoIeraksts = {
+
+    jauns: function(jaunaTodoTeksts) {
+        // ...
+        const dzestPoga = document.createElement('button');
+        // ...
+
+        dzestPoga.addEventListener('click', function() {
+            TodoIeraksts.dzest();
+        });
+
+        // ...
+    },
+
+    // ...
+}
+```
+
+### Izveidojam centralizētu `dzēst` metodi
+
+Lai mēs varētu dzēšanas loģiku vienmēr apstrādāt vienā vietā.
+
+```js
+const TodoIeraksts = {
+    // ...
+
+    dzest: function() {
+        console.log('TODO ieraksts dzēst');
+    }
+};
+
+```
+
+Un pēc tam izsaucam, tur kur mums bija logs `console.log('dzēst')`.
+
+---
+---
+
 # Darbības ar saraksta elementiem 2
 
 - Prot pievienot funkcionalitāti dinaimski izveidotiem elementiem ar JS

@@ -64,6 +64,15 @@ ievadForma.addEventListener('submit', function(event) {
     sarakstsElem.append(ierakstsElem);
 });
 
+// DZĒST:
+// Sameklēsim mūsu dzēst pogas
+let dzestPogaElems = document.querySelectorAll('.todo-ieraksts_dzest');
+for (const dzestElem of dzestPogaElems) {
+    dzestElem.addEventListener('click', function() {
+        TodoIeraksts.dzest();
+    });
+}
+
 // ierakstam komentāru
 //                0      1    2
 let saraksts = ['viens', 2, 'trīs'];

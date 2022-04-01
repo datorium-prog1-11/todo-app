@@ -4,11 +4,19 @@ const TodoIeraksts = {
         // - Pārvietojam ieraksta izveides kodu uz šejieni
         const ierakstsElem = document.createElement('li');
         ierakstsElem.classList.add('todo-ieraksts');
-        ierakstsElem.innerHTML = jaunaTodoTeksts;
+
+        const tekstsElem = document.createElement('span');
+        tekstsElem.classList.add('todo-ieraksts__teksts');
+        tekstsElem.innerHTML = jaunaTodoTeksts;
+        ierakstsElem.appendChild(tekstsElem);
 
         const dzestPoga = document.createElement('button');
         dzestPoga.classList.add('todo-ieraksts_dzest');
         dzestPoga.innerHTML = 'dzēst';
+
+        dzestPoga.addEventListener('click', function() {
+            TodoIeraksts.dzest();
+        });
 
         ierakstsElem.appendChild(dzestPoga);
 
@@ -39,4 +47,8 @@ const TodoIeraksts = {
             }
         }
     },
+
+    dzest: function() {
+        console.log('TODO ieraksts dzēst');
+    }
 };
