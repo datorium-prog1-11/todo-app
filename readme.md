@@ -1,3 +1,45 @@
+# Koda sakārtošana
+
+- Prot sadalīt un pārvietot savu kodu
+- Prot izmantot komentārus, lai paskaidrotu, kas kodā notiek
+
+## Sakārtojam kodu
+
+- Šobrīd mums ir daudz lieka koda iekš `script.js`
+- Mums vajadzētu kādu vietu kur varam eksperimentēt
+
+### Mūsu tagadējā koda arhitektūra - Kur kas stāv?
+
+- `index.html` - tas ir mūsu HTML kods - elementi ko mēs redzam kad ielādējas lapa
+- `style.css` - šis ir mūsu galvenais CSS fails - tas nosaka lapas kopējo izskatu un izkārtojumu
+- `script.js` - tas ir mūsu "galvenais" JS fails - tur sākas mūsu JS loģika
+- `todo-ieraksts` - šī ir mape kur stāv visa kods, kas strādā ar individuāliem TODO ierakstiem
+- `todo-ieraksts/todo-ieraksts.js` - šis ir JS kods, kas operē ar TODO ierakstu - veido, dzēš, izpilda?
+- `todo-ieraksts/todo-ieraksts.css` - šis ir CSS fails, kas nosaka TODO ieraksta izskatu
+
+### Uzdevums: Pārvietot visu kodu, kas nav saistīts ar Mūsu aplikāciju:
+
+- No `script.js` faila
+- Uz `piemers.js` failu
+
+### Uzdevums: Pievienojam komentārus katrai `script.js` rindai
+
+```js
+// Sameklēsim mūsu dzēst pogas - `querySelectorAll` atradīs visas
+let dzestPogaElems = document.querySelectorAll('.todo-ieraksts_dzest'); // atrod pogas pēc klases no HTML
+// izejam cauri visām atrastajām pogām izmantojot `for..of` ciklu
+for (const dzestElem of dzestPogaElems) {
+    // Katrai atrastajai klausās uz peles klikšķi (`click`)
+    dzestElem.addEventListener('click', function() {
+        // Kad notiek klikšķis, izsaucam `dzest()` metodi no `todo-ieraksts.js`
+        TodoIeraksts.dzest();
+    });
+}
+```
+
+---
+---
+
 # Darbības ar saraksta elementiem 3
 
 - Prot patstāvīgi veidot projektu pēc dotajām prasībām.
