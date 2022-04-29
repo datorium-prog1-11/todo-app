@@ -1,3 +1,15 @@
+# Elementa dzēšana un uzdevuma izpildīšana 2
+
+## Atsākam kur palikām
+
+- Kods GitHub: https://github.com/datorium-prog1-11/todo-app
+
+## 3. Uzdevums
+
+Izmantojot `element.closest()` funkciju atrast un izvadīt todo elementu, kas būtu jādzēš.
+
+---
+---
 
 # Elementa dzēšana un uzdevuma izpildīšana
 

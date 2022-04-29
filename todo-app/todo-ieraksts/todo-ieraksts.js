@@ -73,5 +73,6 @@ const TodoIeraksts = {
 
     dzest: function(ierakstsElem) {
         console.log('TODO ieraksts dzēst', ierakstsElem);
+        ierakstsElem.remove();
     }
 };

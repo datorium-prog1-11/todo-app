@@ -43,12 +43,13 @@ ievadForma.addEventListener('submit', function(event) {
 let dzestPogaElems = document.querySelectorAll('.todo-ieraksts_dzest'); // atrod pogas pēc klases no HTML
 // izejam cauri visām atrastajām pogām izmantojot `for..of` ciklu
 for (const dzestElem of dzestPogaElems) {
+
     // Katrai atrastajai klausās uz peles klikšķi (`click`)
     dzestElem.addEventListener('click', function(event) {
-        console.log('klikšķis uz', event.target);
         const dzestPoga = event.target;
-        const ierakstsElem = '???';
+        const ierakstsElem = dzestPoga.closest('.todo-ieraksts');
+
         // Kad notiek klikšķis, izsaucam `dzest()` metodi no `todo-ieraksts.js`
-        TodoIeraksts.dzest();
+        TodoIeraksts.dzest(ierakstsElem);
     });
 }
