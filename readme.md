@@ -1,3 +1,21 @@
+
+# Elementa dzēšana un uzdevuma izpildīšana
+
+## Iegūstam elementu no JS veidotām "dzēst" pogām
+
+- Padodam caur event listener
+
+## Iegūstam TODO elementu no "dzēst" notikuma.
+
+- Katram notikumam ir `target` atribūts
+- Pogas klikšķim `target` ir tā poga uz kā uzklikšķināts
+- No pogas mēs varam iegūt ieraksta elementu apskatot tās "vecākus" (parents)
+- `element.parent`
+- `element.closest("[query]")`
+
+---
+---
+
 # Koda sakārtošana
 
 - Prot sadalīt un pārvietot savu kodu

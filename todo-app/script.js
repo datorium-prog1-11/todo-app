@@ -44,7 +44,10 @@ let dzestPogaElems = document.querySelectorAll('.todo-ieraksts_dzest'); // atrod
 // izejam cauri visām atrastajām pogām izmantojot `for..of` ciklu
 for (const dzestElem of dzestPogaElems) {
     // Katrai atrastajai klausās uz peles klikšķi (`click`)
-    dzestElem.addEventListener('click', function() {
+    dzestElem.addEventListener('click', function(event) {
+        console.log('klikšķis uz', event.target);
+        const dzestPoga = event.target;
+        const ierakstsElem = '???';
         // Kad notiek klikšķis, izsaucam `dzest()` metodi no `todo-ieraksts.js`
         TodoIeraksts.dzest();
     });

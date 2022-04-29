@@ -33,7 +33,7 @@ const TodoIeraksts = {
         dzestPoga.addEventListener('click', function() {
             // Kad noklikšķina, izsaucam `dzest()` metodi no `TodoIeraksts`,
             // lai dzēstu ierakst (dzēšana vēl nav realizēta).
-            TodoIeraksts.dzest();
+            TodoIeraksts.dzest(ierakstsElem);
         });
 
         // pievienojam dzēst pogu ieraksta elementam:
@@ -71,7 +71,7 @@ const TodoIeraksts = {
         }
     },
 
-    dzest: function() {
-        console.log('TODO ieraksts dzēst');
+    dzest: function(ierakstsElem) {
+        console.log('TODO ieraksts dzēst', ierakstsElem);
     }
 };
