@@ -5,3 +5,11 @@
 .uz-google {
     color: pink;
 }
+
+form {
+    border: solid lightgray;
+}
+
+#todo-saraksts {
+    background: lightgray;
+}

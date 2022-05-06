@@ -1,8 +1,55 @@
-# Elementa dzēšana un uzdevuma izpildīšana 2
+# Uzdevuma izpildīšana
 
 ## Atsākam kur palikām
 
 - Kods GitHub: https://github.com/datorium-prog1-11/todo-app
+
+## Uzdevums:
+
+Pievienojam checkbox elementu mūsu todo ierakstiem HTML:
+
+```html
+<input type="checkbox" />
+```
+
+### Uzdevums:
+
+Pievienojam chexbox todo ierakstiem JS
+
+## Stilošana
+
+### Sarežģīti CSS selektori
+
+Līdz šim esam izmantojuši ļoti vienāršus selektorus:
+
+- `li` - elementa selektors (`<li>`)
+- `.todo-ieraksts` - klases selektors (`class="todo-ieraksts")
+- `#unikals-id` - ID selektors (`id="unikals-id"`)
+
+CSS selektorus ir iespējams kombinēt, lai atrastu elementus konkrētās situācijās.
+
+Piemēram:
+- `.todo-ieraksts button` - atradīs visas pogas, kas iekšā elementos ar klasi `todo-ieraksts`.
+- `.todo-ieraksts__statuss + .todo-ieraksts__teksts` - elementu ar klasi `todo-ieraksts__teksts`, kas atrodas aiz elementa `todo-ieraksts__statuss`.
+
+Mēs varam izvēlēties arī konkrētu tipu unputus un pat ņemt vērā viņu stāvokli:
+
+Piemēram:
+- `input[type=checkbox]` - izvēlēsies `<input type="checkbox" />`
+- `input[type=checkbox]:checked` - izvēlēsies tieši "ieķesētu" čekboksi `[x]`
+
+To visu mēs varam apvienot, lai nosvītrotu tekstu, kad čekboksis ir ieķeksēts:
+
+```css
+input[type=checkbox]:checked + .todo-ieraksts__teksts {
+    text-decoration: line-through;
+}
+```
+
+---
+---
+
+# Elementa dzēšana un uzdevuma izpildīšana 2
 
 ## 3. Uzdevums
 

@@ -9,6 +9,16 @@ const TodoIeraksts = {
         // `<li class="todo-ieraksts"></li>`
         ierakstsElem.classList.add('todo-ieraksts');
 
+        // Izveidojam tukšu `<input />` elementu
+        const statussElem = document.createElement('input');
+        // Pārveidojam input par checkbox - <input type="checkbox" />
+        statussElem.type = "checkbox";
+        // Pievienojam klasi `input` elementam -
+        // `<input class="todo-ieraksts__statuss">`
+        statussElem.classList.add('todo-ieraksts__statuss');
+
+        ierakstsElem.appendChild(statussElem);
+
         // Izveidojam tukšu `<span></span>` elementu
         const tekstsElem = document.createElement('span');
         // Pievienojam klasi `span` elementam -

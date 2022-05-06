@@ -2,3 +2,11 @@
 .todo-ieraksts {
     font-weight: bold;
 }
+
+.todo-ieraksts__teksts {
+    text-decoration: underline;
+}
+
+input[type=checkbox]:checked + .todo-ieraksts__teksts {
+    text-decoration: line-through;
+}
