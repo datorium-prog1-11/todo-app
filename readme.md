@@ -32,7 +32,7 @@ Piemēram:
 - `.todo-ieraksts button` - atradīs visas pogas, kas iekšā elementos ar klasi `todo-ieraksts`.
 - `.todo-ieraksts__statuss + .todo-ieraksts__teksts` - elementu ar klasi `todo-ieraksts__teksts`, kas atrodas aiz elementa `todo-ieraksts__statuss`.
 
-Mēs varam izvēlēties arī konkrētu tipu unputus un pat ņemt vērā viņu stāvokli:
+Mēs varam izvēlēties arī konkrētu tipu inputus un pat ņemt vērā viņu stāvokli (state):
 
 Piemēram:
 - `input[type=checkbox]` - izvēlēsies `<input type="checkbox" />`
