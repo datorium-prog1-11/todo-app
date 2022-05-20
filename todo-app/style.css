@@ -1,3 +1,8 @@
+button {
+    border-radius: 3px;
+    transition-duration: 0.2s;
+}
+
 .v-raksts {
     color: green;
 }
@@ -6,10 +11,32 @@
     color: pink;
 }
 
-form {
-    border: solid lightgray;
+#todo-saraksts {
+    list-style: none;
+    padding-left: 0;
 }
 
-#todo-saraksts {
-    background: lightgray;
+.todo-app {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
+}
+
+#ievad-forma {
+    display: flex;
+}
+
+#ievad-forma input[name="teksts"] {
+    flex-grow: 1;
+}
+
+#ievad-forma button {
+    background: #82e782;
+    border: 1px solid green;
+    color: darkgreen;
+}
+
+#ievad-forma button:hover {
+    background: green;
+    color: white;
 }

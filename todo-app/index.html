@@ -13,26 +13,29 @@
   </head>
 
   <body>
-    <h1 id="galvenais-virsraksts" class="v-raksts">To-Do Saraksts</h1>
+    <div class="todo-app">
+      <h1 id="galvenais-virsraksts" class="v-raksts">To-Do Saraksts</h1>
 
-    <form id="ievad-forma">
-      <input type="text" name="teksts" value="" />
-      <button>Pievienot</button>
-    </form>
+      <form id="ievad-forma">
+        <input type="text" name="teksts" value="" />
+        <button>Pievienot</button>
+      </form>
 
-    <ul id="todo-saraksts">
-      <li class="todo-ieraksts">
-        <input type="checkbox" class="todo-ieraksts__statuss" />
-        <span class="todo-ieraksts__teksts">Aiziet uz veikalu</span>
-        <button class="todo-ieraksts_dzest">dzēst</button>
-      </li>
-      <li class="todo-ieraksts">
-        <input type="checkbox" class="todo-ieraksts__statuss" />
-        <span class="todo-ieraksts__teksts">Izvest ārā suni</span>
-        <button class="todo-ieraksts_dzest">dzēst</button>
-      </li>
-    </ul>
+      <ul id="todo-saraksts">
+        <li class="todo-ieraksts">
+          <input type="checkbox" class="todo-ieraksts__statuss" />
+          <span class="todo-ieraksts__teksts">Aiziet uz veikalu</span>
+          <button class="todo-ieraksts_dzest">dzēst</button>
+        </li>
+        <li class="todo-ieraksts">
+          <input type="checkbox" class="todo-ieraksts__statuss" />
+          <span class="todo-ieraksts__teksts">Izvest ārā suni</span>
+          <button class="todo-ieraksts_dzest">dzēst</button>
+        </li>
+      </ul>
+    </div>
 
+    <!-- TodoIeraksts = undefined -->
     <!-- Script tags iet body elementa beigās -->
     <script src="./todo-ieraksts/todo-ieraksts.js"></script>
     <script src="./script.js"></script>

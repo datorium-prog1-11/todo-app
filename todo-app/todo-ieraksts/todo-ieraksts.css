@@ -1,12 +1,25 @@
 /* Pievienot todo-ieraksts CSS kodu */
 .todo-ieraksts {
     font-weight: bold;
+    display: flex;
 }
 
 .todo-ieraksts__teksts {
-    text-decoration: underline;
+    flex-grow: 1;
 }
 
-input[type=checkbox]:checked + .todo-ieraksts__teksts {
+.todo-ieraksts__statuss:checked + .todo-ieraksts__teksts {
     text-decoration: line-through;
+    text-decoration-thickness: 5px;
+}
+
+.todo-ieraksts_dzest {
+    background: #ffacac;
+    border: 1px solid red;
+    color: darkred;
+}
+
+.todo-ieraksts_dzest:hover {
+    background: red;
+    color: white;
 }

@@ -1,8 +1,89 @@
-# Uzdevuma izpildīšana
-
 ## Atsākam kur palikām
 
 - Kods GitHub: https://github.com/datorium-prog1-11/todo-app
+
+## Izpildīta uzdevuma izsvītrošana:
+
+```css
+/* Kad čekboksis ir ieķeksēts, nostvītrojam tekstu tam blakus */
+.todo-ieraksts__statuss:checked + .todo-ieraksts__teksts {
+    text-decoration: line-through;
+}
+```
+
+## Satura iecentrēšana
+
+- Lapas parasti neaizņem visu ekrāna platumu. Vismaz ne uz datora.
+- Tas tāpēc, lai būtu vieglāk uztvert lapas saturu
+- Lai iecentrētu, vispirms vajag visu aplikāciju ielikt elementā ar ko varam strādāt
+
+```html
+<div><!-- Lapas saturs --></div>
+```
+
+- Div elementam jāpiešķir klase (`todo-app`), lai varam to viegli izvēlēties CSSā
+- Horizontālai centrēšanai parasti izmanto `margin` atribūtus
+
+```css
+.todo-app {
+    max-width: 600px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+```
+
+- Taču vertikāli centrēt nav tik vielgi (tur pagaidām ieliksim konkrētu vērtību)
+- Lai lapu iecentrētu tai vajag ierobežot platumu (savādāk aizņems visu ekrānu)
+- Platuma ierobežošanai parasti labāk ir izmantot `max-width`, jo tas ļauj platumu samazināt uz mobilām ierīcēm
+
+
+## Ievadformas izstiepšana
+
+- Ievad-forma izskatītos labāk, ja tā aizņemtu visu aplikācijas platumu, nevis tikai vienu sānu
+- Lai viegli norādītu elementu platumu automātiski izstiepjoties varam izmantot flex-box
+
+```css
+.ievad-forma {
+    display: flex;
+}
+
+.ievad-forma__teksts {
+    flex-grow: 1;
+}
+```
+
+## Noņemam atzīmes no saraksta
+
+- Mūsu sarakstā Čekbokši jau ļoti labi atzīmē saraksta ierakstus. Nav nepieciešamas vēl papildu atzīmes.
+
+```css
+.todo-saraksts {
+    list-style: none;
+    padding: 0;
+}
+```
+
+## Todo ieraksta izstiepšana
+
+- Arī todo ieraksti izskatītos labāk, ja tie aizņemtu visu pieejamo platumu
+
+```css
+.todo-ieraksts {
+    display: flex;
+}
+
+.todo-ieraksts__teksts {
+    flex-grow: 1;
+}
+```
+
+## Ko vēl pamainīt?
+
+---
+---
+
+# Uzdevuma izpildīšana
 
 ## Uzdevums:
 
