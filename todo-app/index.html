@@ -16,6 +16,10 @@
     <div class="todo-app">
       <h1 id="galvenais-virsraksts" class="v-raksts">To-Do Saraksts</h1>
 
+      <h3 class="darbu-skaits">
+        Izdarīti mājas darbi: <span class="darbu-skaits__skaititajs">0/2</span>
+      </h3>
+
       <form id="ievad-forma">
         <input type="text" name="teksts" value="" />
         <button>Pievienot</button>
@@ -23,7 +27,7 @@
 
       <ul id="todo-saraksts">
         <li class="todo-ieraksts">
-          <input type="checkbox" class="todo-ieraksts__statuss" />
+          <input checked type="checkbox" class="todo-ieraksts__statuss" />
           <span class="todo-ieraksts__teksts">Aiziet uz veikalu</span>
           <button class="todo-ieraksts_dzest">dzēst</button>
         </li>

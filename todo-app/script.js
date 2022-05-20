@@ -36,6 +36,9 @@ ievadForma.addEventListener('submit', function(event) {
 
     // Elementa pievienošana paliek te pat
     sarakstsElem.append(ierakstsElem);
+
+    // notīram formu
+    ievadForma.reset();
 });
 
 // DZĒST:
@@ -53,3 +56,35 @@ for (const dzestElem of dzestPogaElems) {
         TodoIeraksts.dzest(ierakstsElem);
     });
 }
+
+// 2. Atrast cik ir ierakstu skaits kopā
+function iegutIerakstuSkaitu() {
+    // iegūstam todo sarakstu:
+    // Paskatamies, cik viņā ir ierakstu
+    const ierakstuSkaits = sarakstsElem.children.length;
+    return ierakstuSkaits;
+}
+console.log('Sarakstā ir: ', iegutIerakstuSkaitu());
+
+// 2. Saprast cik no elementiem ir izdarīti
+function iegutIzpilditoIerakstuSkaitu() {
+    let izpildituIerakstuSkaits = 0;
+    const ieraksti = sarakstsElem.children;
+
+    // Iegūstam katru ieraksta elementu
+    for (const ieraksts of ieraksti) {
+        // - Iegūstam čekboksi
+        const statussElem = ieraksts.querySelector('.todo-ieraksts__statuss');
+        // - Pārbaudīt vai čekboksis ir ieķeksēts
+        const irIzpildits = statussElem.hasAttribute('checked');
+
+        if (irIzpildits) {
+            izpildituIerakstuSkaits = izpildituIerakstuSkaits + 1;
+        }
+    }
+    return izpildituIerakstuSkaits;
+}
+console.log('izpildīto ierakstu skaits:', iegutIzpilditoIerakstuSkaitu());
+
+const skaititajsElem = document.querySelector('.darbu-skaits__skaititajs');
+skaititajsElem.innerHTML = iegutIzpilditoIerakstuSkaitu() + '/' + iegutIerakstuSkaitu();

@@ -1,6 +1,44 @@
+# Papildu uzdevumi un skolēnu iniciatīva
+
 ## Atsākam kur palikām
 
 - Kods GitHub: https://github.com/datorium-prog1-11/todo-app
+
+## Formas notīrīšana pēc datu ievades
+
+Šobrīd mums paliek aizpildīts ievad-lauks pēc datu pievienošanas. To var viegli notīrīt:
+```js
+ievadForma.reset();
+```
+
+## Virsrakstu noformējums
+
+Virsrakstiem parasti izmanto "sans-serif" tipa fontus (Arial, Helvetica, etc).
+
+```css
+.v-raksts {
+    font-family: Arial, sans-serif;
+}
+```
+
+## Izdarīto darbu skaitītājs:
+
+Izmantojam `<h3>` elementu ar tekstu, kas parādīs darbu skaitu:
+
+```html
+<h3 class="darbu-skaits">
+  Izdarīti mājas darbi: <span class="darbu-skaits__skaititajs">0/2</span>
+</h3>
+```
+
+- Atrodam skaitītāju lapā ar `document.querySelector()`
+- Izmantojam `sarakstsElem.children`, lai saskaitītu elementus
+- Izmantojam ciklu, lai pārbaudītu katra ieraksta stāvokli `for (const ieraksts of sarakstsElem.children) { ... }`
+
+---
+---
+
+# Aplikācijas noformējums
 
 ## Izpildīta uzdevuma izsvītrošana:
 
