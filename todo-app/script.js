@@ -39,6 +39,9 @@ ievadForma.addEventListener('submit', function(event) {
 
     // notīram formu
     ievadForma.reset();
+
+    // Atjaunojam skaitītāju
+    DarbuSkaits.atjaunotSkaitu();
 });
 
 // DZĒST:
@@ -57,34 +60,19 @@ for (const dzestElem of dzestPogaElems) {
     });
 }
 
-// 2. Atrast cik ir ierakstu skaits kopā
-function iegutIerakstuSkaitu() {
-    // iegūstam todo sarakstu:
-    // Paskatamies, cik viņā ir ierakstu
-    const ierakstuSkaits = sarakstsElem.children.length;
-    return ierakstuSkaits;
+// Sameklēsim mūsu dzēst pogas - `querySelectorAll` atradīs visas
+let statussElems = document.querySelectorAll('.todo-ieraksts__statuss'); // atrod pogas pēc klases no HTML
+// izejam cauri visām atrastajām pogām izmantojot `for..of` ciklu
+for (const statussElem of statussElems) {
+
+    // Katrai atrastajai klausās uz peles klikšķi (`click`)
+    statussElem.addEventListener('change', function(event) {
+        const dzestPoga = event.target;
+        const ierakstsElem = dzestPoga.closest('.todo-ieraksts');
+
+        // Kad notiek klikšķis, izsaucam `statussAtjaunots()` metodi no `todo-ieraksts.js`
+        TodoIeraksts.statussAtjaunots(ierakstsElem)
+    });
 }
-console.log('Sarakstā ir: ', iegutIerakstuSkaitu());
 
-// 2. Saprast cik no elementiem ir izdarīti
-function iegutIzpilditoIerakstuSkaitu() {
-    let izpildituIerakstuSkaits = 0;
-    const ieraksti = sarakstsElem.children;
-
-    // Iegūstam katru ieraksta elementu
-    for (const ieraksts of ieraksti) {
-        // - Iegūstam čekboksi
-        const statussElem = ieraksts.querySelector('.todo-ieraksts__statuss');
-        // - Pārbaudīt vai čekboksis ir ieķeksēts
-        const irIzpildits = statussElem.hasAttribute('checked');
-
-        if (irIzpildits) {
-            izpildituIerakstuSkaits = izpildituIerakstuSkaits + 1;
-        }
-    }
-    return izpildituIerakstuSkaits;
-}
-console.log('izpildīto ierakstu skaits:', iegutIzpilditoIerakstuSkaitu());
-
-const skaititajsElem = document.querySelector('.darbu-skaits__skaititajs');
-skaititajsElem.innerHTML = iegutIzpilditoIerakstuSkaitu() + '/' + iegutIerakstuSkaitu();
+DarbuSkaits.atjaunotSkaitu();

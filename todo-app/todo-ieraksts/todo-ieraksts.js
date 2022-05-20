@@ -17,6 +17,10 @@ const TodoIeraksts = {
         // `<input class="todo-ieraksts__statuss">`
         statussElem.classList.add('todo-ieraksts__statuss');
 
+        statussElem.addEventListener('change', function() {
+            TodoIeraksts.statussAtjaunots(ierakstsElem);
+        });
+
         ierakstsElem.appendChild(statussElem);
 
         // Izveidojam tukšu `<span></span>` elementu
@@ -84,5 +88,11 @@ const TodoIeraksts = {
     dzest: function(ierakstsElem) {
         console.log('TODO ieraksts dzēst', ierakstsElem);
         ierakstsElem.remove();
+        DarbuSkaits.atjaunotSkaitu();
+    },
+
+    statussAtjaunots: function() {
+        // izsaucam kad mainās statuss
+        DarbuSkaits.atjaunotSkaitu();
     }
 };

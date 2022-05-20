@@ -17,6 +17,7 @@
     background: #ffacac;
     border: 1px solid red;
     color: darkred;
+    align-self: start;
 }
 
 .todo-ieraksts_dzest:hover {
