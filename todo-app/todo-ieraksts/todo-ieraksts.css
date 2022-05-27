@@ -4,8 +4,17 @@
     display: flex;
 }
 
-.todo-ieraksts__teksts {
+.todo-ieraksts .konteineris {
     flex-grow: 1;
+}
+
+.todo-ieraksts__teksts {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.todo-ieraksts__teksts:hover {
+    transform: scale(1.2);
 }
 
 .todo-ieraksts__statuss:checked + .todo-ieraksts__teksts {

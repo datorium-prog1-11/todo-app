@@ -23,6 +23,9 @@ const TodoIeraksts = {
 
         ierakstsElem.appendChild(statussElem);
 
+        const konteinerisElem = document.createElement('div');
+        konteinerisElem.classList.add('konteineris');
+
         // Izveidojam tukšu `<span></span>` elementu
         const tekstsElem = document.createElement('span');
         // Pievienojam klasi `span` elementam -
@@ -31,13 +34,21 @@ const TodoIeraksts = {
         // Pievoenojam lietotāja ievadīto tekstu mūsu todo ierakstam:
         // `<span class="todo-ieraksts__teksts">jauna todo teksts</span>`
         tekstsElem.innerHTML = jaunaTodoTeksts;
+        // Pievoenojam `<div>` elementu ieraksta `<li>` elementam
+        // ```
+        // <div class="konteineris">
+        //   <span class="todo-ieraksts__teksts">jauna todo teksts</span>
+        // </div>
+        // ```
+
+        konteinerisElem.appendChild(tekstsElem);
         // Pievoenojam `<span>` elementu ieraksta `<li>` elementam
         // ```
         // <li class="todo-ieraksts"></li>
-        //   <span class="todo-ieraksts__teksts">jauna todo teksts</span>
+        //   <div class="konteineris"><span>...</span></div>
         // </li>
         // ```
-        ierakstsElem.appendChild(tekstsElem);
+        ierakstsElem.appendChild(konteinerisElem);
 
         const dzestPoga = document.createElement('button');
         dzestPoga.classList.add('todo-ieraksts_dzest');

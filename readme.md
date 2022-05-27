@@ -2,7 +2,57 @@
 
 ## Atsākam kur palikām
 
-- Kods GitHub: https://github.com/datorium-prog1-11/todo-app
+- Kods GitHub: https://github.com/datorim-prog1-11/todo-app
+
+## Teksta palielināšanas animācija
+
+- Palielinām todo ieraksta tekstu, kad tam uziet ar peli.
+- Smuka pāreja starp dažādiem palielināšanas stāvokļiem.
+
+### CSS
+
+- Izmantojam `:hover` selektoru, lai noteiktu, ka pele ir uz elementa:
+
+```css
+.todo-ieraksts__teksts:hover { }
+```
+
+- Izmantojam `transform` CSS propertiju ar `scale()`, lai mainītu elementa izmēru, neietekmējot citus elementus.
+
+```css
+.todo-ieraksts__teksts:hover {
+    transform: scale(1.2);
+}
+```
+
+- Izmantojam `transition` CSS propertiju, lai iegūtu smuku pāreju.
+
+```css
+.todo-ieraksts__teksts {
+    transition: all 0.2s ease-in-out;
+}
+```
+
+### HTML
+
+- Izmantojam konteiner elementu, lai salabotu to elementu, kas animējas:
+
+```html
+<div class="konteineris">
+  <span class="todo-ieraksts__teksts">Aiziet uz veikalu</span>
+</div>
+```
+
+```css
+.todo-ieraksts .konteineris {
+    flex-grow: 1;
+}
+```
+
+---
+---
+
+# Papildu uzdevumi un skolēnu iniciatīva
 
 ## Formas notīrīšana pēc datu ievades
 
