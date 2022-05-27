@@ -1,10 +1,15 @@
 button {
     border-radius: 3px;
     transition-duration: 0.2s;
+    font-family: Ubuntu, sans-serif;
+}
+
+p {
+    font-family: 'Dancing Script', cursive;
 }
 
 .v-raksts {
-    font-family: Arial, sans-serif;
+    font-family: Ubuntu, sans-serif;
 }
 
 .uz-google {
@@ -28,6 +33,7 @@ button {
 
 #ievad-forma input[name="teksts"] {
     flex-grow: 1;
+    font-family: Ubuntu, sans-serif;
 }
 
 #ievad-forma button {

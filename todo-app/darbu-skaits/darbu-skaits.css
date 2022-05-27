@@ -1,4 +1,8 @@
 .darbu-skaits {
-    font-family: Arial, sans-serif;
+    font-family: Ubuntu, sans-serif;
     text-align: right;
+}
+
+.darbu-skaits__skaititajs {
+    font-family: 'Dancing Script', cursive;
 }

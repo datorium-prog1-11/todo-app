@@ -49,6 +49,41 @@
 }
 ```
 
+## Google Fontu izmantošana
+
+- Ie-googlējam "Google Fonts"
+- Ierakstām teikumu Latviešu valodā ar mīkstinājuma zīmēm un garumzīmēm "Type something" inputā
+- Sameklējam Fontu, kas patīk
+- Spiežam virsū
+- Izvēlamies fonta stilus, kas mums būs vajadzīgi (normal, bold, etc...)
+- Spiežam augšējā labajā pusē "View selected families"
+- Nokopējam HTML un CSS kodu
+
+### Ieliekam HTML kodu lapas pašā sākumā `<head>` elementa augšā
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Ubuntu:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+```
+
+### Tālāk varam izmantot fontus CSSā kur mums patīk:
+
+```css
+button {
+    border-radius: 3px;
+    transition-duration: 0.2s;
+    font-family: Ubuntu, sans-serif;
+}
+
+p {
+    font-family: 'Dancing Script', cursive;
+}
+```
+
 ---
 ---
 

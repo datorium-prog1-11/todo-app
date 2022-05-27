@@ -9,15 +9,16 @@
 }
 
 .todo-ieraksts__teksts {
-    transition: all 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     display: inline-block;
+    font-family: 'Dancing Script', cursive;
 }
 
 .todo-ieraksts__teksts:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-.todo-ieraksts__statuss:checked + .todo-ieraksts__teksts {
+.todo-ieraksts__statuss:checked + .konteineris .todo-ieraksts__teksts {
     text-decoration: line-through;
     text-decoration-thickness: 5px;
 }
